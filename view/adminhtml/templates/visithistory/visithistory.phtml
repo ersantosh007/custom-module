@@ -1,0 +1,36 @@
+<?php
+        $objectManager                 = \Magento\Framework\App\ObjectManager::getInstance();
+        $sessionObj                    = $objectManager->get('\Magento\Framework\Session\SessionManager');
+        $sessionid                     = $sessionObj->getSessionId();
+        $VisitlistingModel             = $objectManager->create('Bluethink\Actionlog\Model\ResourceModel\Visitlisting\Collection')
+                                         ->addFieldToFilter('session_id',$sessionid);
+
+?>
+<div class="dashboard-item-content">
+        <table class="admin__table-primary dashboard-data" id="visit_view_section_details_table">
+            <thead>
+	            <tr>
+	                <th>#</th>
+	                <th>Page Name</th>
+	                <th>Page Url</th>
+	                <th>Stay Duration</th>
+	            </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($VisitlistingModel as $_VisitlistingModel) 
+                {  
+                    $n        = $_VisitlistingModel['page_url'];
+                    $m        = explode('key', $n);
+                    $pageurl  = $m['0'];
+                    $pageName =$_VisitlistingModel['module_name'].'/'.$_VisitlistingModel['controller_name'].'/'.$_VisitlistingModel['action_name'].'/'.' Magento Admin';
+                    ?>
+                    <tr>
+                        <td><?= $_VisitlistingModel['visitlisting_id']?></td>
+                        <td><?= $pageName ?></td>
+                        <td><?= $pageurl  ?></td>
+                        <td><?= $_VisitlistingModel['stay_duration']?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>

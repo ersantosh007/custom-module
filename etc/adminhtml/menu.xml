@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Bluethink. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Bluethink_Actionlog::actionlogs" 
+          title="Admin Action Log" 
+          module="Bluethink_Actionlog"  
+          sortOrder="20" 
+          dependsOnModule="Bluethink_Actionlog"  
+          resource="Bluethink_Actionlog::actionlogs"/>
+
+        <add id="Bluethink_Actionlog::bluethink_index_actionlog" 
+          title="Action Log" 
+          parent="Bluethink_Actionlog::actionlogs" 
+          module="Bluethink_Actionlog"  
+          sortOrder="20" 
+          dependsOnModule="Bluethink_Actionlog" 
+          action="actionlog/actionlog" 
+          resource="Bluethink_Actionlog::actionlogs"/>
+
+        <add id="Bluethink_Actionlog::bluethink_index_activesession" 
+          title="Active Session" 
+          parent="Bluethink_Actionlog::actionlogs" 
+          module="Bluethink_Actionlog"  
+          sortOrder="21" 
+          dependsOnModule="Bluethink_Actionlog" 
+          action="actionlog/activesession" 
+          resource="Bluethink_Actionlog::actionlogs"/>
+
+        <add id="Bluethink_Actionlog::bluethink_index_loginattempt" 
+          title="Login Attempt" 
+          parent="Bluethink_Actionlog::actionlogs" 
+          module="Bluethink_Actionlog"  
+          sortOrder="22" 
+          dependsOnModule="Bluethink_Actionlog" 
+          action="actionlog/loginattempt" 
+          resource="Bluethink_Actionlog::actionlogs"/>
+
+        <add id="Bluethink_Actionlog::bluethink_index_visithistory" 
+          title="Page Visit History" 
+          parent="Bluethink_Actionlog::actionlogs" 
+          module="Bluethink_Actionlog"  
+          sortOrder="23" 
+          dependsOnModule="Bluethink_Actionlog" 
+          action="actionlog/visithistory" 
+          resource="Bluethink_Actionlog::actionlogs"/>
+
+       
+    </menu>
+</config>

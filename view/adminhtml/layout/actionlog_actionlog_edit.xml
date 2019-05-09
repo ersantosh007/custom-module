@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="prototype/windows/themes/default.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Bluethink\Actionlog\Block\Adminhtml\Actionlog\Edit" name="bluethink_actionlog_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Bluethink\Actionlog\Block\Adminhtml\Actionlog\Edit\Tabs" name="bluethink_actionlog_edit_tabs">
+                <block class="Bluethink\Actionlog\Block\Adminhtml\Actionlog\Edit\Tab\Iteminformation" name="bluethink_actionlog_edit_tab_iteminformation" template="Bluethink_Actionlog::actionlog/information.phtml" />
+                <block class="Bluethink\Actionlog\Block\Adminhtml\Actionlog\Edit\Tab\Modificationsbreakdown" name="bluethink_actionlog_edit_tab_modificationsbreakdown" template="Bluethink_Actionlog::actionlog/modificationsbreakdown.phtml" />
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">information_section</argument>
+                    <argument name="block" xsi:type="string">bluethink_actionlog_edit_tab_iteminformation</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">breakdown_section</argument>
+                    <argument name="block" xsi:type="string">bluethink_actionlog_edit_tab_modificationsbreakdown</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

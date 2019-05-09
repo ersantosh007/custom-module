@@ -1,0 +1,39 @@
+<?php  
+        $objectManager                 = \Magento\Framework\App\ObjectManager::getInstance();
+        $VisithistoryId                = $this->getRequest()->getParam('visithistory_id');
+	    $VisithistoryModel             = $objectManager->create('Bluethink\Actionlog\Model\Visithistory')->load($VisithistoryId);
+	?>
+ <div class="bluethink-title">
+	    <div class="bluethink-title-wrapper-title">
+	        <span class="title">Visit History</span>
+	    </div>
+	    <table class="admin__table-secondary">
+	        <tbody>
+		        <tr>
+		            <th>Username:</th>
+		            <td><?= $VisithistoryModel['user_name'] ?></td>
+		        </tr>
+		        <tr>
+		            <th>Full Name:</th>
+		            <td><?= $VisithistoryModel['full_name'] ?></td>
+		        </tr>
+		        <tr>
+		            <th>Session Start:</th>
+		            <td><?= $VisithistoryModel['session_start'] ?></td>
+		        </tr>
+		        <tr>
+		            <th>Session End:</th>
+		            <td><?= $VisithistoryModel['session_end'] ?></td>
+		        </tr>
+		        <tr>
+		            <th>IP Address:</th>
+		            <td><?= $VisithistoryModel['ip_address'] ?></td>
+		        </tr>
+		        <tr>
+		            <th>Location:</th>
+		            <td><?= $VisithistoryModel['location'] ?></td>
+		        </tr>
+	        </tbody>
+	    </table>
+    </div>
+	   

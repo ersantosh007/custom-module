@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Magento\Backend\Controller\Adminhtml\Auth\Logout" type="Bluethink\Actionlog\Controller\Adminhtml\Auth\Logout" />
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="bluethink_activesession_listing_data_source" xsi:type="string">Bluethink\Actionlog\Model\ResourceModel\Activesession\Grid\Collection</item>
+				<item name="bluethink_actionlog_listing_data_source" xsi:type="string">Bluethink\Actionlog\Model\ResourceModel\Actionlog\Grid\Collection</item>
+				<item name="bluethink_loginattempt_listing_data_source" xsi:type="string">Bluethink\Actionlog\Model\ResourceModel\Loginattempt\Grid\Collection</item>
+				<item name="bluethink_visithistory_listing_data_source" xsi:type="string">Bluethink\Actionlog\Model\ResourceModel\Visithistory\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<virtualType name="Bluethink\Actionlog\Model\ResourceModel\Activesession\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">bluethink_activesession</argument>
+			<argument name="resourceModel" xsi:type="string">Bluethink\Actionlog\Model\ResourceModel\Activesession\Collection</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="Bluethink\Actionlog\Model\ResourceModel\Loginattempt\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">bluethink_loginattempt</argument>
+			<argument name="resourceModel" xsi:type="string">Bluethink\Actionlog\Model\ResourceModel\Loginattempt\Collection</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="Bluethink\Actionlog\Model\ResourceModel\Actionlog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">bluethink_actionlog</argument>
+			<argument name="resourceModel" xsi:type="string">Bluethink\Actionlog\Model\ResourceModel\Actionlog\Collection</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="Bluethink\Actionlog\Model\ResourceModel\Visithistory\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">bluethink_visithistory</argument>
+			<argument name="resourceModel" xsi:type="string">Bluethink\Actionlog\Model\ResourceModel\Visithistory\Collection</argument>
+		</arguments>
+	</virtualType>
+</config>

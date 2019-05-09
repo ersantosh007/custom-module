@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Bluethink_Actionlog::Actionlog" sortOrder="10" title="Actionlog">
+					<resource id="Bluethink_Actionlog::Actionlog_save" sortOrder="10" title="Save Actionlog"/>
+					<resource id="Bluethink_Actionlog::Actionlog_delete" sortOrder="20" title="Delete Actionlog"/>
+					<resource id="Bluethink_Actionlog::Actionlog_update" sortOrder="30" title="Update Actionlog"/>
+					<resource id="Bluethink_Actionlog::Actionlog_view" sortOrder="40" title="View Actionlog"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>
